@@ -190,3 +190,17 @@ if ! shopt -oq posix; then
     . /etc/bash_completion
   fi
 fi
+
+NUM=$[ ( $RANDOM % 10)  + 1 ]
+case $NUM in
+    1) echo "Aloha, frendo!";;
+    2) echo "Howdy Partner!";;
+    3) echo "How you doin?";;
+    4) echo "Hello Stranger :)";;
+    5) echo "Nice to see you!";;
+    6) echo "Hola, mi amigo";;
+    7) echo "Buenos Dias";;
+    8) echo "Konichwa";;
+    9) echo "Salut";;
+    10) echo "Bongorno";;
+esac
