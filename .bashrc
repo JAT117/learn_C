@@ -92,8 +92,8 @@ alias ll='ls -l'
 alias la='ls -A'
 alias l='ls -CF'
 alias e='emacs -nw'
-alias r='sudo init 6' #reboot
-alias h='cd /home/pi'
+alias rb='sudo init 6' #reboot
+alias h='cd ~/'
 alias install='sudo apt-get install -y'
 alias update='sudo apt-get update'
 alias upgrade='sudo apt-get upgrade'
@@ -168,8 +168,6 @@ mvg (){
 }
 
 # Directory navigation aliases
-
-
 
 # Alias definitions.
 # You may want to put all your additions into a separate file like
