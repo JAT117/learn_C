@@ -1,0 +1,86 @@
+VXworks Notes
+
+
+
+Multitasking kernel with premptive and roud-robin scheduling and fast interrupt response
+Navive 64b OS (only supposts x86-64)
+	Data Model: LP64
+User-mpde applications ("Real-Time Processes", or RTP) isolated from other user-mode applications as well as the kernel via memory protection mechanisms
+Symetric Multiprocessing (SMP), Asymmetric Multiprocessing (AMP) and mixed mode multiprocessing support
+Error handling framework
+Bluetooth, USB, CAN protocols, Firewire IEEE 1394, BLE, L2CAP, Continua stack, Health device profile
+Binary, counting, mutual exclusion with priority inheritance
+Local and Distribuited message cues
+POSIX PSE52 certified conformity in user-mode execution environment
+File-Systems:
+	HRFS
+	FAT (DOSFS)
+	NFS
+	TFFS
+Dual-mode IPv6 networking stack
+Memory protection and IPC
+Multi-OS messaging using TIPC and Wind Rover multi-os IPC
+Symbolic debugginh
+
+
+
+POSIX 1003.1b by ISO/IEEE chapter
+interfaces
+	asynchronous
+	semaphore
+	message queues
+	memory managment
+	queued signals
+	scheduling
+	Clocks and Timers
+	
+Wind Microkernel
+
+
+Task:applications organised into indepedent but cooperation programs. 
+
+Task's Context
+a) A thread of executions which is the tasks program counter
+b) CPU registers and floating point registers
+c) A stack for dynamic variables and function Calls
+d) I/O assignments for standard input output and error
+e) A delay timer, time slice timer, Kernel constrol structures
+
+Task State Transition:
+	Pended  Ready   Delayed
+		   Suspended
+
+Wind Task Scheduling:
+	Preemptive Priority Scheduling
+	Round-Robin Scheduling
+	Premption Locks
+		taskLock()
+		taskUnlock()
+		
+Task Control
+	Task creation and activation
+	Task Stack
+	Task Names and IDs
+	Task Options
+	Task Information
+	Task Deletion and Deletion Safty
+		``memory allocated during deletion is not freed when task is terminated.
+
+InterTask Communications:
+	Shared Memory: For Simple sharing of memory
+	
+	#include <iostream>
+	
+
+	Semaphores: Basic mutual exclusion and synchronization
+
+	Message Queues and Pipes: For inter-tast message passing
+
+	Sockets and Remote Procedure Calls
+
+
+I/O System
+
+	Basic I/O
+		File Descriptors (fd)
+		
