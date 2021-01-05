@@ -1,0 +1,89 @@
+I2C    Inter-Integrated Circuit
+
+Master			Slave
+SDA<------------>SDA	Serial Data
+SCL<------------>SCL	Serial Clock
+
+Pull Up Resistors
+
+Rp(min) = (Vdd - Vol(Max)) / Iol
+Rp(max) = (tr) / .88473xCb
+
+
+2 wires
+Standard speed:	Standard mode = 100 kbps
+				Ultrafast = 5 Mbps
+
+One-to-many
+Synchronous
+Serial
+Unlimited Masters
+1008 Slaves
+ACK/NACK bit gives confirmation that each data frame transfered successfully
+Slower data transfer than SPI
+Sie of data frame limited to 8 bits
+More complicated Hardware
+
+
+I2C Address:
+	No slave select (SS) line
+	Each i2c device has address 
+	Multiple registers with own addresses
+	addresses are 7 bits 
+	
+Data Frams
+	Start
+	7 to 8 bits Address frams
+	read/write bit
+	ACK/NACK bit
+	8 Bits Data Frame 1
+	ACK/NACK bit
+	8 Bits Data Frame 2
+	stop
+
+
+SDA and SCL are common busses 
+
+//Single master w/ multiple slaves case
+	Master   Slave
+			 
+			 Slave
+			 
+			 Slave
+		vcc	 
+
+//Multiple master w/ multiple slaves case
+	Master   Slave
+			 
+	Master   Slave
+			 
+	Master   Slave
+		VCC
+	
+
+
+//Arduino sketch	
+
+
+
+Wired.begin();
+Wire.beginTransmission(slave_address);
+Write.write();
+Wire.read()
+Wire.endTransmission();
+
+#include <Wire.h>
+
+const int MPU_addr=0x68; //I2C address on the MPU-6050
+char AcX_LOW
+
+void setup(){
+	Wire.begin();
+}
+
+void loop(){
+	Wire.beginTransmission(MPU_addr);
+	Wire.Write(0x3C); //starting register 0x36(ACCEL_XOUT_H);
+	Wire.endTransmission(true);
+	AcX_LOW=Wire.read();
+}

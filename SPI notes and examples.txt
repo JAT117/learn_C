@@ -1,0 +1,93 @@
+SPI Communication
+
+Serial Peripheral Interface SPI
+
+-One-to-many
+-No stop and start bits, unintrupted continuous stream
+-No Complicated slave addressing
+-Higher Transfer Rate that I2C
+-MOSI/MISO are separate lines, data can be sent and received simultaneously
+
+
+Uses 4 Wires (More for multiple slaves)
+	MOSI (Master Output/Slave Input)[MSB first to slave]
+	MISO (Master Input/Slave Output)[LSB first to master]
+	SCLK (Clock)
+	SS/CS (Slave Select/Chip Select -n HIGH)
+
+-No acks for success data transfers (unlike 12C)
+-Single master
+-No error correction or parity bit 
+-Synchronous communications protocol
+
+Clock Polarity:
+	State of clock when idle(no data) while clock phase distinguishes Falling or Rising edge
+
+
+SPI Modes
+
+Modes	CLK Polarity		Clock Phase  		Clk IDLE	 	Data Shifted
+============================================================================
+0			0					0				Low				Falling Edge
+1			0					1				Low				Rising Edge
+2			1					0				High			Rising Edge
+3			1					1				High			Rising Edge
+
+
+5V 1 bit / 0V 0 bit
+
+Serial Communication
+
+	<0-->
+	<1-->
+	<2-->
+	<3-->
+	<4-->
+	<5-->
+	<6-->
+	<7-->
+	<clk>
+
+
+
+Parallel Communication
+
+	<data 1 0 1 0 1 0 1 0 >
+	<clk 1 0 1 0 1 0 1 0 >
+
+
+Master 
+		Slave
+		
+		Slave 2
+		
+		Slave 3
+	
+
+//Arduino SPI (mode 0)
+
+void SPI_softwrite(char data){
+	for(int i = 0; i < 8; i++, data >>1){
+	digitalWrite(MOSI_pin, data & 0x01);
+	digitalWrite(SCK_pin, LOW); //after each bit sent, CLK is pulsed low
+	delay(1);
+	digitalWrite(SCK_pin, HIGH)
+	delay(1);
+	
+	}
+}
+
+
+
+//Arduino SPI (mode 3)
+
+void SPI_softwrite(char data){
+	for(int i = 0; i < 8; i++, data >>1){
+	digitalWrite(MOSI_pin, data & 0x01);
+	digitalWrite(SCK_pin, HIGH); //after each bit sent, CLK is pulsed low
+	delay(1);
+	digitalWrite(SCK_pin, LOW)
+	delay(1);
+	
+	}
+}

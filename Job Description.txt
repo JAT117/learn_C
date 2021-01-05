@@ -1,0 +1,19 @@
+-Proven record and result-oriented in software engineering managment and discipline.
+
+-Strong experience in building high performing organizations team, developing people, empowering teams, and enabling decision making.
+
+-Drive the full software development life-cycle SDLC by setting strategy, prioritizing tasks, asnd allocating approp resources to maximize ROI.
+
+-Proven ability to direct multiple teams, plan project activities, and resolve conflicts.
+
+-Proactive in identifyiing and managing the execution of activities to fulfill department goals.
+
+-Storing passion for embedded software/firmware design methodologies and development.
+
+-Extensive experience in embedded software/firmware.
+
+REAL TIME multi-threaded systems (RTOS,VXWorks, Linux, and Windows) C/C++,,C#,PL/M51 and Assembly
+
+-Expertise in device drivers and bare metal development for embedded systems-innovative analytical talents, problem-solving, debugging techniques in RTOS systems
+
+-Outstanding communication, interpersonal and organizational skills

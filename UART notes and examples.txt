@@ -1,0 +1,60 @@
+UART Universial Asynchronous Receiver/Transmitter
+
+RS-232
+USB
+
+A physical circuit in a microcontroller or standalone IC
+Purpose is to transmit and receive serial data
+
+Uses 2 wires
+Any speed up to 115200 baud, usually 9600 baud
+Asynchronous
+Serial communication 
+
+
+Typlically release received data via buffered FIFO
+one to one 
+
+Tx  ----> Rx
+Rx	<---- Tx
+GRD ---- GRD
+
+UART transmitted as packsts 
+1 start bit
+5-9 data bits
+0 to 1 party bits (PB)
+1 to 2 stop bits  (SB)
+
+
+Start D0 D1 D2 D3 D4 D5 D6 D7 PB SBz
+
+	Clock
+	
+	
+	
+Working D Flip-Flop
+
+Data D --- Q Output
+CLK	   ---
+
+					Transmit register
+					shift register  --->Tx
+clock generator------<>		
+					shift register	<---Rx	
+					receive register
+			
+				Parallel		Serial
+Data Bus					|	
+	D0						|		Rx_data[N...0]  <----
+	.						|
+	.						|		Tx_data[N...0]  ---->
+	.						|
+	D7						|
+							|
+Control I/O                 |
+	R/W                     |
+	CLK                     |
+	INT                     |
+                            |
+
+
