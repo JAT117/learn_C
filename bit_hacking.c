@@ -1,41 +1,3 @@
-Sometimes Microcontrollers use 2B instead of 4B for integers
-Fixed width integers from stdint.h
-
-Jim Blinn
-
-Always the same size across archs
-	int8_t
-	uint64_t
-
-IEEE 754
-	float
-	double
-	long double
-
-
-char is a numeric value but its used to represent characters
-
-	#include <stdio.h>
-
-	int main () {
-		chat c = 'A';
-		
-		printf("%c\n",c);
-	}
-
-
-structs, access members using the dot operator struct_t.member
-
-
-pointers again
-
-int main () {
-	int *x; //pointer to an int called x
-	int *p = &x;
-	
-	printf("%p, %i\n",p, *p);
-}
-
 //Look into Streaming SIMD Extensions (SSE) 
 
 //Inline integer operations 
@@ -88,14 +50,56 @@ float SqrtNewRap(float x){
 }
 
 //RSQRTPS from SSE ASM
-//Lomont's Q_inverse_square (slightly better than Q_rsqrt
+//Lomont's Q_inverse_square (slightly better than Q_rsqrt)
 float InvSqrt(float x)
 {
 	float xhalf = 0.5f*x;
 	int i = *(int*)&x;
-	i = 0x5f375a86 - (i>>1);
+	i = 0x5f375a86 - (i>>1); //better magic number than Carmack's
 	x = *(float*)&i;
 	x = x*(1.5f-xhalf*x*x);
 	return x;
 }
+
+		       
+		       
+Sometimes Microcontrollers use 2B instead of 4B for integers
+Fixed width integers from stdint.h
+
+Jim Blinn
+
+Always the same size across archs
+	int8_t
+	uint64_t
+
+IEEE 754
+	float
+	double
+	long double
+
+
+char is a numeric value but its used to represent characters
+
+	#include <stdio.h>
+
+	int main () {
+		chat c = 'A';
+		
+		printf("%c\n",c);
+	}
+
+
+structs, access members using the dot operator struct_t.member
+
+
+pointers again
+
+int main () {
+	int *x; //pointer to an int called x
+	int *p = &x;
+	
+	printf("%p, %i\n",p, *p);
+}
+
+
 
