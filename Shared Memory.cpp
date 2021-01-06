@@ -1,6 +1,18 @@
 /*
 	Shared Memory Model
-	Create a shared memory segment in the address space by one process, read bt a different process (then delete)
+	Create a shared memory segment in the address space by one process, read bt a different processes (different programs) (then delete)
+	
+	
+	shmget()
+	
+	shmat()
+	
+	shmdt()
+	
+	shmctl()
+	
+	ftok()
+	
 */
 
 
@@ -57,8 +69,10 @@ int main()
 	shmdt(str);
 	
 	//destroy the shared memory
-	shmctl(shmid, IPC_RMID,NULL);
+	shmctl(shmid, IPC_RMID, NULL);
 	
 	return 0;
 }
+
+
 
