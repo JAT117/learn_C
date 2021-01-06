@@ -36,12 +36,12 @@ inb & outb
 System Calls (varies by architecture, ~340)
 	Functions called from user space but implemented in the kernel space
 	found in include/uapi/asp-generic/unistd.h
-	Docunemted in man (2)
+	Documented in man(2)
 	Called throught the standard lib
 	
-	
+//lkm_module.ko	
 #include <linux/init.h>
-#inlcude <linux/module.h?
+#inlcude <linux/module.h>
 #include <linux/kernel.h>
 
 MODULE_LICENSE("GPL");
@@ -61,7 +61,7 @@ static void __exit lkm_example_exit(void){
 module_init(lkm_example_init);
 module_exit(lkm_example_exit);
 
-
+//makefile example
 obj-m += lkm_example.o
 all:
  make -C /lib/modules/$(shell uname -r)/build M=$(PWD) modules
@@ -69,7 +69,7 @@ clean:
  make -C /lib/modules/$(shell uname -r)/build M=$(PWD) clean
 	
 	
-	
+//now add and remove .ko	
 $sudo inmod lkm_module.ko
 $sudo dsmeg
 $lsmod | grep "lkm_example"
