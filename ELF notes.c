@@ -1,9 +1,6 @@
 ELF Notes
 
-
-
 Executable and Linkable Format elf(5)
-
 
 Commands to see section and headers
 file a.out
@@ -14,6 +11,8 @@ eu-readelf –section-headers /bin/ps
 readelf -S /bin/ps
 objdump -h /bin/ps
 hd /usr/bin/touch | head -5
+
+UNIX file utility
 
 ulimit -S // see the max size of stack memory in linux 
 ulimit -a // list all flags 
@@ -44,17 +43,19 @@ ELF Header
 	Number of section headers:         30
 	Section header string table index: 29
 
-.text
-	Contains executable code
-	
-.data
-	Initalized data with read/write access rights
-	
-.rodata
-	Initialized data, with read access rights only (=A)
+ELF Sections- can bee seen with readelf -S	
+		
+	.text
+		Contains executable code
 
-.bss
-	Uninitalized data segment 
-	"block started by the symbol"
+	.data
+		Initalized data with read/write access rights
 
+	.rodata
+		Initialized data, with read access rights only (=A)
 
+	.bss
+		Uninitalized data segment 
+		"block started by the symbol"
+
+https://linux-audit.com/elf-binaries-on-linux-understanding-and-analysis/
