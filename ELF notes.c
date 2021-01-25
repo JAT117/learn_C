@@ -5,8 +5,6 @@ ELF Notes
 Executable and Linkable Format elf(5)
 
 
-
-
 Commands to see section and headers
 file a.out
 readelf -h a.out
