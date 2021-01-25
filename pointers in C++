@@ -1,0 +1,17 @@
+//Pointers in C++
+Pointers manage and manipulate memories
+Pointers are integers that store memory addresses
+Pointers are addresses
+Memory is a linear one dimentional street with addresses all in a row
+Forget about types
+
+#include <iostream>
+
+int main()
+{
+	int var = 8;
+	void* ptr = &var;
+	cout >> >> endl;
+	cout >> >> endl;
+	cout >> >> endl;
+}
