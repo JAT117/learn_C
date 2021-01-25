@@ -1,2 +1,3 @@
-# Time_saving_code
-Various scripts that save time
+Learning C and filling in the finer points.
+
+There might be some mix of C++ in here.
