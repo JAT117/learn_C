@@ -1,4 +1,3 @@
-
 #include <iostream>
 using namespace std;
 
@@ -119,7 +118,6 @@ int checkwin()
 /*******************************************************************
      FUNCTION TO DRAW BOARD OF TIC TAC TOE WITH PLAYERS MARK
 ********************************************************************/
-
 
 void board()
 {
