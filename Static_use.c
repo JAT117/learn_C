@@ -1,17 +1,16 @@
 //Static Variables in C
 
 /*
-Static variables preserve their value even after they are out of scope.
-Retains memory during program execution
+  Static variables preserve their value even after they are out of scope.
+  Retains memory during program execution
 
-A static variable inside a function keeps its value between invocations.
+  A static variable inside a function keeps its value between invocations.
 
-A static global variable or a function is "seen" only in the file it's declared in
-
+  A static global variable or a function is "seen" only in the file it's declared in
 */
 
 //without static  output: 1 1
-#include<stdio.h>
+#include <stdio.h>
 
 int fun()
 {
@@ -30,7 +29,7 @@ int main()
 
 
 //using static  output: 1 2
-#include<stdio.h>
+#include <stdio.h>
 
 int fun()
 {
@@ -45,5 +44,3 @@ int main()
   printf("%d ", fun());
   return 0;
 }
-
-
