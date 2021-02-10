@@ -3,15 +3,26 @@
 	Create a shared memory segment in the address space by one process, read bt a different processes (different programs) (then delete)
 	
 	
-	shmget()
+	shmget(): allocates a shared memory segment and returns identifier for said segment.
+		
+		#include <sys/ipc.h>
+		#include <sys/shm.h>
+		
+		int shmget(key_t key, size_t size, int shmflg); //If shmflg is set to 0, IPC_PRIVATE
+											IPC_CREAT
+											IPC_EXCL
 	
-	shmat()
+	shmat(): attaches shared memory segment(which has shmid) to the address space of the calling process(which has shmaddr).
 	
-	shmdt()
+	shmdt(): detaches shared memory segment(which has shmid) to the address space of the calling process(which has shmaddr).
 	
-	shmctl()
+	shmctl(): performs control operations on segment with shmid, and used to mark shared memory segment for DESTRUCTION.
+		int shmctl(int shmid, int cmd, struct shmid_ds *buf);
 	
-	ftok()
+	ftok(): convert pathname and project identifier for IPC key (system V)
+		#include <sys/types.h>
+		
+		key_t ftok(const char *pathname, int proj_id)
 	
 */
 
@@ -28,7 +39,7 @@ int main()
 	key_k key = ftok("shmfile", 65);
 	
 	//create identifier for shmid
-	int shmid = shmget(key1024,0666| IPC_CREAT);
+	int shmid = shmget(key1024,0666 | IPC_CREAT);
 	
 	//attach shared memory
 	char *str = (char*) shmat(shmid,(void*)0,0);
@@ -46,7 +57,7 @@ int main()
 }
 
 
-//Reader Process 
+//Reading Process (segment attaches to this)
 #include <iostream>
 #include <sys/ipc.h>
 #include <sys/shm.h>
