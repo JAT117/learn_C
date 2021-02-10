@@ -1,5 +1,5 @@
+/*
 Malloc(), Calloc(), Realloc(), and Free()
-
 C is a structured language
 We need to know the sizes of allocated memory before we requesition
 
@@ -8,13 +8,14 @@ malloc(): memory allocation
 	Dynamically allocates a large block of memory with a specified size.
 	Returns pointer of type void which can be cast into a pointer of any form.
 	Pointer holds the address of the first byte in allocated memory
-	
+
+
 	ptr = (cast-type*) malloc(n * byte-size)
 
 	int *ptr = (int*)malloc(5 * sizeof(int))
-							5 *  sizeof(int) is 4 bytes
-							= 20 bytes
-
+				5 * sizeof(int) is 4 bytes = 20 bytes
+*/				
+				
 	//malloc() example
 	#include <stdio.h> 
 	#include <stdlib.h> 
@@ -162,13 +163,13 @@ Free(): de-allocates memory, responsibility of programmer to release memory no l
 		return 0; 
 	} 
 			
-			
+/*			
 Realloc(): re-allocation of previously allocated memory
 
 	int *ptr = (int*)malloc(5*size(int)) //allocates 20 bytes
 	ptr = realloc(ptr, 10*sizeof(int)); //reallocates to 40bytes
 	where ptr is reallocated with new size 'newSize'.
-
+*/
 	//realloc() example	
 	#include <stdio.h> 
 	#include <stdlib.h> 
