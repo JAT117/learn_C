@@ -11,23 +11,34 @@ Supported by C99 but not earlier variants like K&R
 
 */
 
+//for C
 #include <stdio.h> 
-
-// Inline function in C 
-static inline int foo() 
+static inline int foo() // Inline function in C 
 { 
 	return 2; 
 } 
 
-// Driver code 
 int main() 
 { 
-
 	int ret; 
-
-	// inline function call 
-	ret = foo(); 
+	ret = foo(); // inline function call 
 
 	printf("Output is: %d\n", ret); 
 	return 0; 
 } 
+
+
+//for C++
+#include <iostream>
+using namespace std;
+inline int cube(int s)
+{
+	return s*s*s;
+}
+
+int main
+{
+	cout << "The cube of 5 is " << cube(5) << endl;
+	return 0;
+}
+	
