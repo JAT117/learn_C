@@ -26,8 +26,6 @@ int main()
   return 0;
 }
 
-
-
 //using static  output: 1 2
 #include <stdio.h>
 
