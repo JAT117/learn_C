@@ -64,26 +64,24 @@ SDA and SCL are common busses
 
 //Arduino sketch	
 
+	Wired.begin();
+	Wire.beginTransmission(slave_address);
+	Write.write();
+	Wire.read()
+	Wire.endTransmission();
 
+	#include <Wire.h>
 
-Wired.begin();
-Wire.beginTransmission(slave_address);
-Write.write();
-Wire.read()
-Wire.endTransmission();
+	const int MPU_addr=0x68; //I2C address on the MPU-6050
+	char AcX_LOW
 
-#include <Wire.h>
+	void setup(){
+		Wire.begin();
+	}
 
-const int MPU_addr=0x68; //I2C address on the MPU-6050
-char AcX_LOW
-
-void setup(){
-	Wire.begin();
-}
-
-void loop(){
-	Wire.beginTransmission(MPU_addr);
-	Wire.Write(0x3C); //starting register 0x36(ACCEL_XOUT_H);
-	Wire.endTransmission(true);
-	AcX_LOW=Wire.read();
-}
+	void loop(){
+		Wire.beginTransmission(MPU_addr);
+		Wire.Write(0x3C); //starting register 0x36(ACCEL_XOUT_H);
+		Wire.endTransmission(true);
+		AcX_LOW=Wire.read();
+	}
