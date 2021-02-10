@@ -13,8 +13,12 @@
 											IPC_EXCL
 	
 	shmat(): attaches shared memory segment(which has shmid) to the address space of the calling process(which has shmaddr).
-	
+		void *shmat(int shmid, const void *shmaddr, int shmflg);
+		If shmadder is null the system will arrange a page aligned address to attach to segment.
+		
 	shmdt(): detaches shared memory segment(which has shmid) to the address space of the calling process(which has shmaddr).
+		
+		int shmdt(const void *shmaddr);
 	
 	shmctl(): performs control operations on segment with shmid, and used to mark shared memory segment for DESTRUCTION.
 		int shmctl(int shmid, int cmd, struct shmid_ds *buf);
@@ -84,6 +88,3 @@ int main()
 	
 	return 0;
 }
-
-
-
