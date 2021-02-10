@@ -9,7 +9,7 @@
   A static global variable or a function is "seen" only in the file it's declared in
 */
 
-//without static  output: 1 1
+//without static output: 1 1
 #include <stdio.h>
 
 int fun()
@@ -26,7 +26,7 @@ int main()
   return 0;
 }
 
-//using static  output: 1 2
+//using static output: 1 2
 #include <stdio.h>
 
 int fun()
