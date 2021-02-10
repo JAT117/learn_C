@@ -8,7 +8,6 @@ Function substitution is a decided by the compiler and may be ignored.
 'functions with tiny definitions can be optimized, hope the compiler takes the hint'
 
 Supported by C99 but not earlier variants like K&R
-
 */
 
 //for C
@@ -41,4 +40,3 @@ int main
 	cout << "The cube of 5 is " << cube(5) << endl;
 	return 0;
 }
-	
