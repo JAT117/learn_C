@@ -1,4 +1,5 @@
 UART Universial Asynchronous Receiver/Transmitter
+================================================
 
 RS-232
 USB
@@ -25,13 +26,10 @@ UART transmitted as packsts
 0 to 1 party bits (PB)
 1 to 2 stop bits  (SB)
 
-
 Start D0 D1 D2 D3 D4 D5 D6 D7 PB SBz
 
 	Clock
-	
-	
-	
+		
 Working D Flip-Flop
 
 Data D --- Q Output
@@ -45,16 +43,16 @@ clock generator------<>
 			
 				Parallel		Serial
 Data Bus					|	
-	D0						|		Rx_data[N...0]  <----
-	.						|
-	.						|		Tx_data[N...0]  ---->
-	.						|
-	D7						|
-							|
-Control I/O                 |
-	R/W                     |
-	CLK                     |
-	INT                     |
-                            |
+	D0					|		Rx_data[N...0]  <----
+	.					|
+	.					|		Tx_data[N...0]  ---->
+	.					|
+	D7					|
+						|
+Control I/O                 			|
+	R/W                     		|
+	CLK                     		|
+	INT                     		|
+                            			|
 
 
