@@ -8,7 +8,6 @@ Clients runs on any cse machine 02-6
 Send a complete sentence to server
 Receive message from server with number of vowels and print
 Send "bye" message to server to close connection with server
-
 */
 
 //These are pretty much standard for C socket programming
