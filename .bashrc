@@ -104,7 +104,7 @@ alias ...='cd ../..'
 alias ....='cd ../../..'
 alias .....='cd ../../../..'
 
-#extract - who wahts to remember tar?
+#extract - who wants to remember tar commands?
 extract () {
      if [ -f $1 ] ; then
          case $1 in
@@ -202,3 +202,9 @@ case $NUM in
     9) echo "Salut";;
     10) echo "Bongorno";;
 esac
+
+
+#RHEL Systems
+
+rpm -qa <package>
+chronyc sources

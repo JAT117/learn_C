@@ -57,7 +57,6 @@ static void __exit lkm_example_exit(void){
 	return 0;
 }
 
-
 module_init(lkm_example_init);
 module_exit(lkm_example_exit);
 
@@ -68,9 +67,13 @@ all:
 clean:
  make -C /lib/modules/$(shell uname -r)/build M=$(PWD) clean
 	
-	
 //now add and remove .ko	
 $sudo inmod lkm_module.ko
 $sudo dsmeg
 $lsmod | grep "lkm_example"
 $sudl rmod lkm_example
+
+Grub2 BootLoaderSpec (BLS) /etc/default/grub make "true" to revert memory entries
+Take a look at /boot file structures on all common distros
+symvers 
+System.Map

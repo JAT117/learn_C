@@ -1,8 +1,7 @@
 /*
 Malloc(), Calloc(), Realloc(), and Free()
 C is a structured language
-We need to know the sizes of allocated memory before we requesition
-
+We need to know the sizes of allocated memory before we requesition memory
 
 malloc(): memory allocation 
 	Dynamically allocates a large block of memory with a specified size.
@@ -59,7 +58,7 @@ malloc(): memory allocation
 		return 0; 
 	} 
 
-calloc(): contiguous allocation, similar to malloc(), initalizes each block with a default value '0'
+//calloc(): contiguous allocation, similar to malloc(), initalizes each block with a default value '0'
 	
 		ptr = (cast-type*)calloc(n, element-size);
 		
@@ -110,11 +109,10 @@ calloc(): contiguous allocation, similar to malloc(), initalizes each block with
 		return 0; 
 	} 
 
-Free(): de-allocates memory, responsibility of programmer to release memory no longer needed.
+//Free(): de-allocates memory, responsibility of programmer to release memory no longer needed.
 	
 	free(ptr);
-	
-	
+		
 	//free() example
 	#include <stdio.h> 
 	#include <stdlib.h> 

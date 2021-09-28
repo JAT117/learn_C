@@ -33,7 +33,7 @@ float Exp2(float x){
 }
 
 
-//Pow(x,p) loose approximation
+//Pow(x,p) loose approx
 float Pow(float x, float p){
 	return AsFloat(int(p*(AsInt(x)-OneAsInt))+OneAsInt;
 }
@@ -43,7 +43,7 @@ float Sqrt(float x){
 	return AsFloat((AsInt(x)>>)+(OneAsInt) >>1));
 }
 
-//newton-raphson
+//newton-raphson method
 float SqrtNewRap(float x){
 	float y Sqrt(x);
 	return (y*y+x)/(2*y);
@@ -60,8 +60,7 @@ float InvSqrt(float x)
 	x = x*(1.5f-xhalf*x*x);
 	return x;
 }
-
-		       
+	       
 		       
 Sometimes Microcontrollers use 2B instead of 4B for integers
 Fixed width integers from stdint.h
@@ -90,7 +89,6 @@ char is a numeric value but its used to represent characters
 
 
 structs, access members using the dot operator struct_t.member
-
 
 pointers again
 
