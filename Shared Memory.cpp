@@ -8,9 +8,7 @@
 		#include <sys/ipc.h>
 		#include <sys/shm.h>
 		
-		int shmget(key_t key, size_t size, int shmflg); //If shmflg is set to 0, IPC_PRIVATE
-											IPC_CREAT
-											IPC_EXCL
+		int shmget(key_t key, size_t size, int shmflg); //If shmflg is set to 0, IPC_PRIVATE, IPC_CREAT, IPC_EXCL
 	
 	shmat(): attaches shared memory segment(which has shmid) to the address space of the calling process(which has shmaddr).
 		void *shmat(int shmid, const void *shmaddr, int shmflg);
